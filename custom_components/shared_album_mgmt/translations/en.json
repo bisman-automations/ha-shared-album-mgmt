@@ -1,0 +1,339 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a public shared album",
+        "description": "Paste the album's public link from Photos: open the shared album, tap the people icon, turn on Public Website and copy the link. Both photos.icloud.com/shared/album/… and older icloud.com/sharedalbum/#… links work. Anyone with the link can see the album, so treat it like a password.",
+        "data": {
+          "url": "Public album link",
+          "name": "Name"
+        },
+        "data_description": {
+          "url": "The link Photos gives you for the album's Public Website.",
+          "name": "Optional. Leave empty to use the album's own name."
+        },
+        "sections": {
+          "advanced": {
+            "name": "Advanced",
+            "description": "Only needed if Apple answers from a host this integration doesn't know yet.",
+            "data": {
+              "extra_trusted_hosts": "Extra trusted hosts"
+            },
+            "data_description": {
+              "extra_trusted_hosts": "Host names Apple uses for this album, like p99-ckdatabasews.icloud.com. *.example.com matches subdomains."
+            }
+          }
+        }
+      },
+      "settings": {
+        "title": "Where and how to save {album}",
+        "description": "{album} has {photos} photos and {videos} videos right now. You can change every setting later from the integration's options or the Shared Album Mgmt sidebar.",
+        "data": {
+          "media_dir": "Media folder",
+          "folder": "Folder",
+          "photo_format": "Photo format",
+          "leave_mode": "When a photo leaves the album",
+          "interval_minutes": "Sync every (minutes)"
+        },
+        "data_description": {
+          "media_dir": "Home Assistant media folder to save into. The album appears under Media > My media.",
+          "folder": "Folder inside the media folder.",
+          "photo_format": "Convert HEIC to JPEG and Keep originals take the largest version Apple has. Apple's smaller JPEG is about 2048 pixels wide and much smaller.",
+          "leave_mode": "Quarantine moves the file aside so you can restore or delete it from the sidebar. Nothing is removed until a first full read of the album, or when Apple returns an empty album.",
+          "interval_minutes": "0 syncs only when you ask (Sync now button or action)."
+        }
+      },
+      "reconfigure": {
+        "title": "Change the album link",
+        "description": "Paste a new public link for this album, or change its name.",
+        "data": {
+          "url": "Public album link",
+          "name": "Name"
+        },
+        "data_description": {
+          "url": "The link Photos gives you for the album's Public Website.",
+          "name": "Shown in Home Assistant and the sidebar."
+        }
+      }
+    },
+    "error": {
+      "invalid_link": "That isn't a public iCloud shared album link. In Photos, open the shared album, turn on Public Website, and copy its link.",
+      "album_not_found": "Apple doesn't have an album at that link. Its Public Website may have been turned off, or the album was deleted.",
+      "album_requires_login": "This album is shared with people only. Turn on Public Website for it in Photos and try again.",
+      "apple_error": "Apple sent an answer this integration couldn't read. Try again in a few minutes.",
+      "cannot_connect": "Couldn't reach iCloud. Check Home Assistant's internet connection.",
+      "incomplete_listing": "Apple stopped part way through the album. Try again in a few minutes.",
+      "untrusted_host": "Apple returned an unexpected {kind} host, {host}. If it belongs to Apple, add it under Advanced > Extra trusted hosts and try again.",
+      "unknown": "Something unexpected went wrong. Check the logs.",
+      "invalid_interval": "Use 0 for manual only, or 15 minutes to 10080 minutes (a week).",
+      "nothing_to_sync": "Turn on photos, videos, or both.",
+      "invalid_choice": "Choose one of the options.",
+      "invalid_media_dir": "Choose one of Home Assistant's media folders.",
+      "invalid_folder": "Use a folder path inside the media folder, like shared_albums/family. Each part has to start with a letter or digit.",
+      "invalid_number": "Enter a number in the allowed range.",
+      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com."
+    },
+    "abort": {
+      "already_configured": "This album has already been added.",
+      "reconfigure_successful": "The album link was updated.",
+      "invalid_link": "That isn't a public iCloud shared album link. In Photos, open the shared album, turn on Public Website, and copy its link.",
+      "album_not_found": "Apple doesn't have an album at that link. Its Public Website may have been turned off, or the album was deleted.",
+      "album_requires_login": "This album is shared with people only. Turn on Public Website for it in Photos and try again.",
+      "apple_error": "Apple sent an answer this integration couldn't read. Try again in a few minutes.",
+      "cannot_connect": "Couldn't reach iCloud. Check Home Assistant's internet connection.",
+      "incomplete_listing": "Apple stopped part way through the album. Try again in a few minutes.",
+      "untrusted_host": "Apple returned an unexpected {kind} host, {host}. Add it under Advanced > Extra trusted hosts if it belongs to Apple.",
+      "unknown": "Something unexpected went wrong. Check the logs.",
+      "invalid_interval": "Use 0 for manual only, or 15 minutes to 10080 minutes (a week).",
+      "nothing_to_sync": "Turn on photos, videos, or both.",
+      "invalid_choice": "Choose one of the options.",
+      "invalid_media_dir": "Choose one of Home Assistant's media folders.",
+      "invalid_folder": "Use a folder path inside the media folder, like shared_albums/family. Each part has to start with a letter or digit.",
+      "invalid_number": "Enter a number in the allowed range.",
+      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Album settings",
+        "description": "Saving reloads the album. Files already downloaded stay where they are unless a setting below removes them.",
+        "sections": {
+          "schedule": {
+            "name": "Schedule",
+            "data": {
+              "interval_minutes": "Sync every (minutes)"
+            },
+            "data_description": {
+              "interval_minutes": "0 syncs only when you ask (Sync now button or action)."
+            }
+          },
+          "content": {
+            "name": "What to save",
+            "data": {
+              "sync_photos": "Photos",
+              "sync_videos": "Videos",
+              "photo_format": "Photo format",
+              "leave_mode": "When a photo leaves the album"
+            },
+            "data_description": {
+              "photo_format": "Convert HEIC to JPEG and Keep originals take the largest version Apple has. Apple's smaller JPEG is about 2048 pixels wide and much smaller.",
+              "leave_mode": "Quarantine moves the file aside so you can restore or delete it from the sidebar. Nothing is removed until a first full read of the album, or when Apple returns an empty album."
+            }
+          },
+          "storage": {
+            "name": "Folder",
+            "data": {
+              "media_dir": "Media folder",
+              "folder": "Folder",
+              "write_latest": "Write latest.jpg",
+              "write_index": "Write index.json"
+            },
+            "data_description": {
+              "media_dir": "Home Assistant media folder to save into. The album appears under Media > My media.",
+              "folder": "Folder inside the media folder. Changing it starts a new folder; the old one is left as it is.",
+              "write_latest": "A copy of the newest photo, for picture cards.",
+              "write_index": "A list of every file with its date and size, for custom dashboards."
+            }
+          },
+          "limits": {
+            "name": "Limits and filters",
+            "data": {
+              "keep_days": "Keep days",
+              "max_files": "Max files",
+              "min_file_size_kb": "Minimum file size",
+              "min_long_edge": "Minimum long edge"
+            },
+            "data_description": {
+              "keep_days": "Only keep photos taken in the last this many days. 0 keeps all.",
+              "max_files": "Only keep the newest this many items. 0 keeps all.",
+              "min_file_size_kb": "Skip items smaller than this. 0 keeps all.",
+              "min_long_edge": "Skip items narrower than this on their longer side. 0 keeps all."
+            }
+          },
+          "advanced": {
+            "name": "Advanced",
+            "data": {
+              "extra_trusted_hosts": "Extra trusted hosts",
+              "max_concurrent_downloads": "Downloads at once",
+              "min_free_space_mb": "Keep this much disk free",
+              "jpeg_quality": "JPEG quality"
+            },
+            "data_description": {
+              "extra_trusted_hosts": "Apple hosts to allow besides the built-in ones, for when Apple starts using a new host. Use *.example.com for every subdomain.",
+              "max_concurrent_downloads": "How many files download at the same time.",
+              "min_free_space_mb": "A sync stops before downloading when it would leave less free space than this.",
+              "jpeg_quality": "Quality of JPEGs converted from HEIC."
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "invalid_interval": "Use 0 for manual only, or 15 minutes to 10080 minutes (a week).",
+      "nothing_to_sync": "Turn on photos, videos, or both.",
+      "invalid_choice": "Choose one of the options.",
+      "invalid_media_dir": "Choose one of Home Assistant's media folders.",
+      "invalid_folder": "Use a folder path inside the media folder, like shared_albums/family. Each part has to start with a letter or digit.",
+      "invalid_number": "Enter a number in the allowed range.",
+      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com."
+    }
+  },
+  "selector": {
+    "photo_format": {
+      "options": {
+        "convert": "Convert HEIC to JPEG",
+        "original": "Keep originals as-is",
+        "dashboard": "Apple's smaller JPEG (dashboard size)"
+      }
+    },
+    "leave_mode": {
+      "options": {
+        "quarantine": "Quarantine (move to a hidden .quarantine folder)",
+        "keep": "Keep the file",
+        "delete": "Delete the file"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "problem": {
+        "name": "Problem"
+      }
+    },
+    "button": {
+      "sync_now": {
+        "name": "Sync now"
+      }
+    },
+    "image": {
+      "latest_photo": {
+        "name": "Latest photo"
+      }
+    },
+    "sensor": {
+      "status": {
+        "name": "Status",
+        "state": {
+          "idle": "Idle",
+          "syncing": "Syncing",
+          "error": "Error"
+        }
+      },
+      "last_sync": {
+        "name": "Last sync"
+      },
+      "item_count": {
+        "name": "Items",
+        "unit_of_measurement": "items"
+      },
+      "bytes_used": {
+        "name": "Space used"
+      },
+      "quarantine_count": {
+        "name": "Quarantined",
+        "unit_of_measurement": "items"
+      },
+      "last_error": {
+        "name": "Last error",
+        "state": {
+          "none": "None",
+          "invalid_link": "Invalid link",
+          "album_not_found": "Album not found",
+          "album_requires_login": "Not public",
+          "apple_error": "Apple error",
+          "cannot_connect": "Can't reach iCloud",
+          "incomplete_listing": "Incomplete listing",
+          "untrusted_host": "Unexpected Apple host",
+          "low_disk_space": "Low disk space",
+          "download_failed": "Downloads failed",
+          "storage_error": "Folder error",
+          "unknown": "Unknown"
+        }
+      }
+    }
+  },
+  "services": {
+    "sync_now": {
+      "name": "Sync now",
+      "description": "Syncs an album now, in the background.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Album",
+          "description": "The album to sync."
+        },
+        "full": {
+          "name": "Check every file",
+          "description": "Also re-read every downloaded file and download again any that changed or went missing."
+        }
+      }
+    },
+    "rebuild_index": {
+      "name": "Rebuild index",
+      "description": "Forgets files that were deleted by hand and rewrites index.json and latest.jpg, without contacting Apple.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Album",
+          "description": "The album to rebuild."
+        }
+      }
+    },
+    "purge_quarantine": {
+      "name": "Empty quarantine",
+      "description": "Deletes quarantined files for good.",
+      "fields": {
+        "config_entry_id": {
+          "name": "Album",
+          "description": "The album whose quarantine to empty."
+        },
+        "older_than_days": {
+          "name": "Older than",
+          "description": "Only delete files quarantined at least this many days ago. 0 deletes all."
+        }
+      }
+    }
+  },
+  "issues": {
+    "untrusted_host": {
+      "title": "{album}: Apple used a new host",
+      "fix_flow": {
+        "step": {
+          "confirm": {
+            "title": "Trust {host}?",
+            "description": "Syncing {album} stopped because Apple returned {host}, which isn't one of the Apple hosts this integration knows. If the host ends in icloud.com or icloud-content.com it is almost certainly Apple's. Submit to add it to the album's extra trusted hosts and sync again."
+          }
+        },
+        "abort": {
+          "album_removed": "The album was removed.",
+          "invalid_host": "That host name can't be added."
+        }
+      }
+    },
+    "heic_unavailable": {
+      "title": "HEIC photos can't be converted",
+      "description": "The pillow-heif library couldn't be loaded on this system, so albums set to Convert HEIC to JPEG are saving Apple's largest JPEG instead (or the HEIC original when Apple has no JPEG). Check the log for the import error, or switch those albums to Apple's smaller JPEG."
+    },
+    "low_disk_space": {
+      "title": "{album}: not enough disk space",
+      "description": "Syncing {album} stopped before downloading because only {free} MB is free and {needed} MB is needed (including the space the album keeps free). Free up space, or lower Keep this much disk free in the album's Advanced settings."
+    },
+    "album_gone": {
+      "title": "{album} can't be read",
+      "description": "Apple no longer shares {album} publicly: its Public Website was turned off or the album was deleted. Files already downloaded are kept. Turn Public Website back on, change the link with Reconfigure, or remove the album."
+    }
+  },
+  "exceptions": {
+    "invalid_folder_setup": {
+      "message": "The album's {field} setting isn't usable. Open the album's options and choose a media folder and folder again."
+    },
+    "unknown_album": {
+      "message": "That isn't a Shared Album Mgmt album."
+    },
+    "album_not_loaded": {
+      "message": "That album isn't running. Check it on the integration page."
+    },
+    "already_syncing": {
+      "message": "That album is already syncing."
+    }
+  }
+}

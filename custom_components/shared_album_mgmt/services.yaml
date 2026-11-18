@@ -1,0 +1,35 @@
+sync_now:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: shared_album_mgmt
+    full:
+      default: false
+      selector:
+        boolean:
+
+rebuild_index:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: shared_album_mgmt
+
+purge_quarantine:
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        config_entry:
+          integration: shared_album_mgmt
+    older_than_days:
+      default: 0
+      selector:
+        number:
+          min: 0
+          max: 3650
+          unit_of_measurement: d
+          mode: box

@@ -1,0 +1,57 @@
+{
+ "results": [
+  {
+   "ancestorRecords": [],
+   "anonymousPublicAccess": {
+    "databasePartition": "https://p49-ckdatabasews.icloud.com:443",
+    "resolvedPartitionNumber": 49,
+    "token": "REDACTED-ANON-TOKEN",
+    "tokenTTL": 1200000
+   },
+   "containerIdentifier": "com.apple.photos.cloud",
+   "databaseScope": "SHARED",
+   "environment": "production",
+   "minimallyResolved": false,
+   "potentialMatchList": [],
+   "requireAppleLogin": false,
+   "share": {
+    "fields": {
+     "cloudkit.title": {
+      "type": "STRING",
+      "value": "Sample Album"
+     },
+     "cloudkit.type": {
+      "type": "STRING",
+      "value": "photos_sharedcollections"
+     },
+     "sharedCollectionState": {
+      "type": "INT64",
+      "value": 0
+     },
+     "viewingMode": {
+      "type": "INT64",
+      "value": 0
+     }
+    },
+    "publicAnonymousAccess": true,
+    "publicPermission": "READ_WRITE",
+    "recordName": "Share-00000000-0000-0000-0000-000000000000",
+    "recordType": "cloudkit.share",
+    "zoneID": {
+     "ownerRecordName": "_00000000000000000000000000000000",
+     "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+     "zoneType": "REGULAR_CUSTOM_ZONE"
+    }
+   },
+   "shortGUID": {
+    "shouldFetchRootRecord": true,
+    "value": "REDACTEDALBUMID01"
+   },
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  }
+ ]
+}

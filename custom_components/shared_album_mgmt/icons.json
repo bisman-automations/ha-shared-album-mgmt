@@ -1,0 +1,38 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "problem": {
+        "default": "mdi:image-check",
+        "state": { "on": "mdi:image-remove" }
+      }
+    },
+    "button": {
+      "sync_now": { "default": "mdi:image-sync" }
+    },
+    "image": {
+      "latest_photo": { "default": "mdi:image" }
+    },
+    "sensor": {
+      "status": {
+        "default": "mdi:image-multiple",
+        "state": {
+          "syncing": "mdi:cloud-sync",
+          "error": "mdi:cloud-alert"
+        }
+      },
+      "last_sync": { "default": "mdi:clock-check-outline" },
+      "item_count": { "default": "mdi:counter" },
+      "bytes_used": { "default": "mdi:harddisk" },
+      "quarantine_count": { "default": "mdi:archive-arrow-down" },
+      "last_error": {
+        "default": "mdi:alert-circle-outline",
+        "state": { "none": "mdi:check-circle-outline" }
+      }
+    }
+  },
+  "services": {
+    "sync_now": { "service": "mdi:image-sync" },
+    "rebuild_index": { "service": "mdi:file-document-refresh" },
+    "purge_quarantine": { "service": "mdi:archive-remove" }
+  }
+}

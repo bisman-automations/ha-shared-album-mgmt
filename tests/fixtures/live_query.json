@@ -1,0 +1,1445 @@
+{
+ "records": [
+  {
+   "deleted": false,
+   "fields": {
+    "dataClassType": {
+     "type": "INT64",
+     "value": 1
+    },
+    "filenameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "SU1HXzAwMDEuSlBH"
+    },
+    "fullSizeJPEGSource": {
+     "type": "INT64",
+     "value": 1
+    },
+    "importDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000000000
+    },
+    "importedBy": {
+     "type": "INT64",
+     "value": 0
+    },
+    "itemType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "mediaMetaDataEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "mediaMetaDataType": {
+     "type": "STRING",
+     "value": "CGImageProperties"
+    },
+    "originalCreationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000000000
+    },
+    "originalOrientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000000000
+    },
+    "resJPEGThumbFileSize": {
+     "type": "INT64",
+     "value": 39213
+    },
+    "resJPEGThumbFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resJPEGThumbFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resJPEGThumbHeight": {
+     "type": "INT64",
+     "value": 340
+    },
+    "resJPEGThumbRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTEDd1fa80c9ae079a38/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "d1fa80c9ae079a3839b511157acffcd3584fc0c2",
+      "referenceChecksum": "REDACTED",
+      "size": 39213,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resJPEGThumbWidth": {
+     "type": "INT64",
+     "value": 506
+    },
+    "resOriginalFileSize": {
+     "type": "INT64",
+     "value": 217858
+    },
+    "resOriginalFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resOriginalFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resOriginalHeight": {
+     "type": "INT64",
+     "value": 784
+    },
+    "resOriginalRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED0a2f400bba90fb47/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "0a2f400bba90fb478db113eabbe5b736a2e5aaf3",
+      "referenceChecksum": "REDACTED",
+      "size": 217858,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resOriginalWidth": {
+     "type": "INT64",
+     "value": 1168
+    },
+    "videoFrameRate": {
+     "type": "INT64",
+     "value": 0
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "M-0001-0000-4000-8000-000000000000",
+   "recordType": "CPLMaster",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "dataClassType": {
+     "type": "INT64",
+     "value": 1
+    },
+    "filenameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "SU1HXzAwMDEuSlBH"
+    },
+    "fullSizeJPEGSource": {
+     "type": "INT64",
+     "value": 1
+    },
+    "importDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000001000
+    },
+    "importedBy": {
+     "type": "INT64",
+     "value": 0
+    },
+    "itemType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "mediaMetaDataEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "mediaMetaDataType": {
+     "type": "STRING",
+     "value": "CGImageProperties"
+    },
+    "originalCreationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000001000
+    },
+    "originalOrientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000001000
+    },
+    "resJPEGThumbFileSize": {
+     "type": "INT64",
+     "value": 32443
+    },
+    "resJPEGThumbFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resJPEGThumbFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resJPEGThumbHeight": {
+     "type": "INT64",
+     "value": 340
+    },
+    "resJPEGThumbRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTEDf9a78444c8298fb4/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "f9a78444c8298fb4e6e7bd1b9c9c530c34cf501c",
+      "referenceChecksum": "REDACTED",
+      "size": 32443,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resJPEGThumbWidth": {
+     "type": "INT64",
+     "value": 506
+    },
+    "resOriginalFileSize": {
+     "type": "INT64",
+     "value": 167941
+    },
+    "resOriginalFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resOriginalFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resOriginalHeight": {
+     "type": "INT64",
+     "value": 784
+    },
+    "resOriginalRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTEDa8d10c52bb74e53b/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "a8d10c52bb74e53ba81dd2845c0e63f9ff6e45b3",
+      "referenceChecksum": "REDACTED",
+      "size": 167941,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resOriginalWidth": {
+     "type": "INT64",
+     "value": 1168
+    },
+    "videoFrameRate": {
+     "type": "INT64",
+     "value": 0
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "M-0002-0000-4000-8000-000000000000",
+   "recordType": "CPLMaster",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "dataClassType": {
+     "type": "INT64",
+     "value": 1
+    },
+    "filenameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "SU1HXzAwMDIuSlBH"
+    },
+    "fullSizeJPEGSource": {
+     "type": "INT64",
+     "value": 1
+    },
+    "importDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000002000
+    },
+    "importedBy": {
+     "type": "INT64",
+     "value": 0
+    },
+    "itemType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "mediaMetaDataEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "mediaMetaDataType": {
+     "type": "STRING",
+     "value": "CGImageProperties"
+    },
+    "originalCreationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000002000
+    },
+    "originalOrientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000002000
+    },
+    "resJPEGThumbFileSize": {
+     "type": "INT64",
+     "value": 31728
+    },
+    "resJPEGThumbFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resJPEGThumbFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resJPEGThumbHeight": {
+     "type": "INT64",
+     "value": 506
+    },
+    "resJPEGThumbRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED2fe5495818950c6c/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "2fe5495818950c6cf98eddeace9f71e05b005b36",
+      "referenceChecksum": "REDACTED",
+      "size": 31728,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resJPEGThumbWidth": {
+     "type": "INT64",
+     "value": 340
+    },
+    "resOriginalFileSize": {
+     "type": "INT64",
+     "value": 158987
+    },
+    "resOriginalFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resOriginalFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resOriginalHeight": {
+     "type": "INT64",
+     "value": 1168
+    },
+    "resOriginalRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED7490f0935297e194/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "7490f0935297e1941eb1d2409dd39ff7ab70eada",
+      "referenceChecksum": "REDACTED",
+      "size": 158987,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resOriginalWidth": {
+     "type": "INT64",
+     "value": 784
+    },
+    "videoFrameRate": {
+     "type": "INT64",
+     "value": 0
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "M-0003-0000-4000-8000-000000000000",
+   "recordType": "CPLMaster",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "dataClassType": {
+     "type": "INT64",
+     "value": 1
+    },
+    "filenameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "SU1HXzAwMDIuSlBH"
+    },
+    "fullSizeJPEGSource": {
+     "type": "INT64",
+     "value": 1
+    },
+    "importDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000003000
+    },
+    "importedBy": {
+     "type": "INT64",
+     "value": 0
+    },
+    "itemType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "mediaMetaDataEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "mediaMetaDataType": {
+     "type": "STRING",
+     "value": "CGImageProperties"
+    },
+    "originalCreationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000003000
+    },
+    "originalOrientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000003000
+    },
+    "resJPEGThumbFileSize": {
+     "type": "INT64",
+     "value": 56317
+    },
+    "resJPEGThumbFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resJPEGThumbFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resJPEGThumbHeight": {
+     "type": "INT64",
+     "value": 340
+    },
+    "resJPEGThumbRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED097385bf583db192/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "097385bf583db1929a4fd2fcd253cd4fd2d5125a",
+      "referenceChecksum": "REDACTED",
+      "size": 56317,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resJPEGThumbWidth": {
+     "type": "INT64",
+     "value": 506
+    },
+    "resOriginalFileSize": {
+     "type": "INT64",
+     "value": 303437
+    },
+    "resOriginalFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resOriginalFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resOriginalHeight": {
+     "type": "INT64",
+     "value": 784
+    },
+    "resOriginalRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED69bb2bf6b87e01fa/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "69bb2bf6b87e01faae2a073efd35e00b09969cd7",
+      "referenceChecksum": "REDACTED",
+      "size": 303437,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resOriginalWidth": {
+     "type": "INT64",
+     "value": 1168
+    },
+    "videoFrameRate": {
+     "type": "INT64",
+     "value": 0
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "M-0004-0000-4000-8000-000000000000",
+   "recordType": "CPLMaster",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "dataClassType": {
+     "type": "INT64",
+     "value": 1
+    },
+    "filenameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "SU1HXzAwMDMuSlBH"
+    },
+    "fullSizeJPEGSource": {
+     "type": "INT64",
+     "value": 1
+    },
+    "importDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000004000
+    },
+    "importedBy": {
+     "type": "INT64",
+     "value": 0
+    },
+    "itemType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "mediaMetaDataEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "mediaMetaDataType": {
+     "type": "STRING",
+     "value": "CGImageProperties"
+    },
+    "originalCreationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000004000
+    },
+    "originalOrientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000004000
+    },
+    "resJPEGThumbFileSize": {
+     "type": "INT64",
+     "value": 39717
+    },
+    "resJPEGThumbFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resJPEGThumbFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resJPEGThumbHeight": {
+     "type": "INT64",
+     "value": 340
+    },
+    "resJPEGThumbRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED85ea20fc1e4ddffa/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "85ea20fc1e4ddffa8a528631dc541d79a39c906c",
+      "referenceChecksum": "REDACTED",
+      "size": 39717,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resJPEGThumbWidth": {
+     "type": "INT64",
+     "value": 506
+    },
+    "resOriginalFileSize": {
+     "type": "INT64",
+     "value": 180510
+    },
+    "resOriginalFileType": {
+     "type": "STRING",
+     "value": "public.jpeg"
+    },
+    "resOriginalFingerprint": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "resOriginalHeight": {
+     "type": "INT64",
+     "value": 784
+    },
+    "resOriginalRes": {
+     "type": "ASSETID",
+     "value": {
+      "downloadURL": "https://cvws-h2.icloud-content.com/B/REDACTED214273a9d7286504/${f}?o=REDACTED&v=1&x=3&a=REDACTED&e=1790000000&fl=&r=REDACTED-1p49&s=REDACTED",
+      "fileChecksum": "214273a9d7286504ed6f49f643a7d927658e7fd9",
+      "referenceChecksum": "REDACTED",
+      "size": 180510,
+      "wrappingKey": "REDACTED"
+     }
+    },
+    "resOriginalWidth": {
+     "type": "INT64",
+     "value": 1168
+    },
+    "videoFrameRate": {
+     "type": "INT64",
+     "value": 0
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "M-0005-0000-4000-8000-000000000000",
+   "recordType": "CPLMaster",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "addedDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000000000
+    },
+    "adjustmentRenderType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "adjustmentSourceType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetBatchId": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "assetDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000000000
+    },
+    "assetHDRType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtype": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtypeV2": {
+     "type": "INT64",
+     "value": 0
+    },
+    "burstFlags": {
+     "type": "INT64",
+     "value": 0
+    },
+    "customRenderedValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "duration": {
+     "type": "INT64",
+     "value": 0
+    },
+    "extendedDescEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "U2lnbmF0dXJlOiBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQ=="
+    },
+    "facesVersion": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isFavorite": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isHidden": {
+     "type": "INT64",
+     "value": 0
+    },
+    "keywordsEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "masterRef": {
+     "type": "REFERENCE",
+     "value": {
+      "action": "DELETE_SELF",
+      "recordName": "M-0001-0000-4000-8000-000000000000",
+      "zoneID": {
+       "ownerRecordName": "_00000000000000000000000000000000",
+       "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+       "zoneType": "REGULAR_CUSTOM_ZONE"
+      }
+     }
+    },
+    "mostRecentAddedDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000000000
+    },
+    "orientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "originalChoice": {
+     "type": "INT64",
+     "value": 0
+    },
+    "people": {
+     "type": "UNKNOWN_LIST",
+     "value": []
+    },
+    "playCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "rating": {
+     "type": "INT64",
+     "value": 0
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000005000
+    },
+    "shareCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "sharedSyncSharingStateEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "timeZoneNameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "VVRD"
+    },
+    "timeZoneOffset": {
+     "type": "INT64",
+     "value": -18000
+    },
+    "trashReason": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplVisibilityState": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewPresentationTypeEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDAQAAgAAAAAAAABAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAACg=="
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "A-0006-0000-4000-8000-000000000000",
+   "recordType": "CPLAsset",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "addedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999999000
+    },
+    "adjustmentRenderType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "adjustmentSourceType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetBatchId": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "assetDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999999000
+    },
+    "assetHDRType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtype": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtypeV2": {
+     "type": "INT64",
+     "value": 0
+    },
+    "burstFlags": {
+     "type": "INT64",
+     "value": 0
+    },
+    "customRenderedValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "duration": {
+     "type": "INT64",
+     "value": 0
+    },
+    "extendedDescEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "U2lnbmF0dXJlOiBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQ=="
+    },
+    "facesVersion": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isFavorite": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isHidden": {
+     "type": "INT64",
+     "value": 0
+    },
+    "keywordsEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "masterRef": {
+     "type": "REFERENCE",
+     "value": {
+      "action": "DELETE_SELF",
+      "recordName": "M-0002-0000-4000-8000-000000000000",
+      "zoneID": {
+       "ownerRecordName": "_00000000000000000000000000000000",
+       "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+       "zoneType": "REGULAR_CUSTOM_ZONE"
+      }
+     }
+    },
+    "mostRecentAddedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999999000
+    },
+    "orientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "originalChoice": {
+     "type": "INT64",
+     "value": 0
+    },
+    "people": {
+     "type": "UNKNOWN_LIST",
+     "value": []
+    },
+    "playCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "rating": {
+     "type": "INT64",
+     "value": 0
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000006000
+    },
+    "shareCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "sharedSyncSharingStateEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "timeZoneNameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "VVRD"
+    },
+    "timeZoneOffset": {
+     "type": "INT64",
+     "value": -18000
+    },
+    "trashReason": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplVisibilityState": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewPresentationTypeEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDAQAAgAAAAAAAABAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAACg=="
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "A-0007-0000-4000-8000-000000000000",
+   "recordType": "CPLAsset",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "addedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999998000
+    },
+    "adjustmentRenderType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "adjustmentSourceType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetBatchId": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "assetDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999998000
+    },
+    "assetHDRType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtype": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtypeV2": {
+     "type": "INT64",
+     "value": 0
+    },
+    "burstFlags": {
+     "type": "INT64",
+     "value": 0
+    },
+    "customRenderedValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "duration": {
+     "type": "INT64",
+     "value": 0
+    },
+    "extendedDescEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "U2lnbmF0dXJlOiBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQ=="
+    },
+    "facesVersion": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isFavorite": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isHidden": {
+     "type": "INT64",
+     "value": 0
+    },
+    "keywordsEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "masterRef": {
+     "type": "REFERENCE",
+     "value": {
+      "action": "DELETE_SELF",
+      "recordName": "M-0003-0000-4000-8000-000000000000",
+      "zoneID": {
+       "ownerRecordName": "_00000000000000000000000000000000",
+       "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+       "zoneType": "REGULAR_CUSTOM_ZONE"
+      }
+     }
+    },
+    "mostRecentAddedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999998000
+    },
+    "orientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "originalChoice": {
+     "type": "INT64",
+     "value": 0
+    },
+    "people": {
+     "type": "UNKNOWN_LIST",
+     "value": []
+    },
+    "playCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "rating": {
+     "type": "INT64",
+     "value": 0
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000007000
+    },
+    "shareCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "sharedSyncSharingStateEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "timeZoneNameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "VVRD"
+    },
+    "timeZoneOffset": {
+     "type": "INT64",
+     "value": -18000
+    },
+    "trashReason": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplVisibilityState": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewPresentationTypeEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDAQAAgAAAAAAAABAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAACg=="
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "A-0008-0000-4000-8000-000000000000",
+   "recordType": "CPLAsset",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "addedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999997000
+    },
+    "adjustmentRenderType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "adjustmentSourceType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetBatchId": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "assetDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999997000
+    },
+    "assetHDRType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtype": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtypeV2": {
+     "type": "INT64",
+     "value": 0
+    },
+    "burstFlags": {
+     "type": "INT64",
+     "value": 0
+    },
+    "customRenderedValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "duration": {
+     "type": "INT64",
+     "value": 0
+    },
+    "extendedDescEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "U2lnbmF0dXJlOiBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQ=="
+    },
+    "facesVersion": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isFavorite": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isHidden": {
+     "type": "INT64",
+     "value": 0
+    },
+    "keywordsEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "masterRef": {
+     "type": "REFERENCE",
+     "value": {
+      "action": "DELETE_SELF",
+      "recordName": "M-0004-0000-4000-8000-000000000000",
+      "zoneID": {
+       "ownerRecordName": "_00000000000000000000000000000000",
+       "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+       "zoneType": "REGULAR_CUSTOM_ZONE"
+      }
+     }
+    },
+    "mostRecentAddedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999997000
+    },
+    "orientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "originalChoice": {
+     "type": "INT64",
+     "value": 0
+    },
+    "people": {
+     "type": "UNKNOWN_LIST",
+     "value": []
+    },
+    "playCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "rating": {
+     "type": "INT64",
+     "value": 0
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000008000
+    },
+    "shareCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "sharedSyncSharingStateEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "timeZoneNameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "VVRD"
+    },
+    "timeZoneOffset": {
+     "type": "INT64",
+     "value": -18000
+    },
+    "trashReason": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplVisibilityState": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewPresentationTypeEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDAQAAgAAAAAAAABAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAACg=="
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "A-0009-0000-4000-8000-000000000000",
+   "recordType": "CPLAsset",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  },
+  {
+   "deleted": false,
+   "fields": {
+    "addedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999996000
+    },
+    "adjustmentRenderType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "adjustmentSourceType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetBatchId": {
+     "type": "STRING",
+     "value": "REDACTED"
+    },
+    "assetDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999996000
+    },
+    "assetHDRType": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtype": {
+     "type": "INT64",
+     "value": 0
+    },
+    "assetSubtypeV2": {
+     "type": "INT64",
+     "value": 0
+    },
+    "burstFlags": {
+     "type": "INT64",
+     "value": 0
+    },
+    "customRenderedValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "duration": {
+     "type": "INT64",
+     "value": 0
+    },
+    "extendedDescEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "U2lnbmF0dXJlOiBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQQ=="
+    },
+    "facesVersion": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isFavorite": {
+     "type": "INT64",
+     "value": 0
+    },
+    "isHidden": {
+     "type": "INT64",
+     "value": 0
+    },
+    "keywordsEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDCgCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "masterRef": {
+     "type": "REFERENCE",
+     "value": {
+      "action": "DELETE_SELF",
+      "recordName": "M-0005-0000-4000-8000-000000000000",
+      "zoneID": {
+       "ownerRecordName": "_00000000000000000000000000000000",
+       "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+       "zoneType": "REGULAR_CUSTOM_ZONE"
+      }
+     }
+    },
+    "mostRecentAddedDate": {
+     "type": "TIMESTAMP",
+     "value": 1789999996000
+    },
+    "orientation": {
+     "type": "INT64",
+     "value": 1
+    },
+    "originalChoice": {
+     "type": "INT64",
+     "value": 0
+    },
+    "people": {
+     "type": "UNKNOWN_LIST",
+     "value": []
+    },
+    "playCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "rating": {
+     "type": "INT64",
+     "value": 0
+    },
+    "recordModificationDate": {
+     "type": "TIMESTAMP",
+     "value": 1790000009000
+    },
+    "shareCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "sharedSyncSharingStateEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDDQCAAAAAAAAAEBAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAJ"
+    },
+    "timeZoneNameEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "VVRD"
+    },
+    "timeZoneOffset": {
+     "type": "INT64",
+     "value": -18000
+    },
+    "trashReason": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDispValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurScale": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplDurValue": {
+     "type": "INT64",
+     "value": 0
+    },
+    "vidComplVisibilityState": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewCount": {
+     "type": "INT64",
+     "value": 0
+    },
+    "viewPresentationTypeEnc": {
+     "type": "ENCRYPTED_BYTES",
+     "value": "YnBsaXN0MDAQAAgAAAAAAAABAQAAAAAAAAABAAAAAAAAAAAAAAAAAAAACg=="
+    }
+   },
+   "pluginFields": {},
+   "recordChangeTag": "REDACTED",
+   "recordName": "A-0010-0000-4000-8000-000000000000",
+   "recordType": "CPLAsset",
+   "zoneID": {
+    "ownerRecordName": "_00000000000000000000000000000000",
+    "zoneName": "SharedSync-00000000-0000-0000-0000-000000000000",
+    "zoneType": "REGULAR_CUSTOM_ZONE"
+   }
+  }
+ ],
+ "syncToken": "REDACTED"
+}

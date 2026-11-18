@@ -1,0 +1,15 @@
+{
+  "domain": "shared_album_mgmt",
+  "name": "Shared Album Mgmt",
+  "after_dependencies": ["frontend", "media_source"],
+  "codeowners": ["@donavanbecker"],
+  "config_flow": true,
+  "dependencies": ["http", "repairs"],
+  "documentation": "https://github.com/bisman-automations/ha-shared-album-mgmt",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/bisman-automations/ha-shared-album-mgmt/issues",
+  "loggers": ["pillow_heif"],
+  "requirements": ["pillow-heif==1.8.1"],
+  "version": "0.1.0"
+}
