@@ -42,7 +42,7 @@ from .const import (
 from .convert import heic_available
 from .coordinator import AlbumCoordinator
 from .links import AlbumLink
-from .options import with_defaults
+from .options import async_resolve_target, with_defaults
 from .panel import async_register_panel, async_register_static, async_unregister_panel
 from .thumbs import async_register_views
 from .websocket_api import async_register_websocket
@@ -86,14 +86,18 @@ def album_link(entry: ConfigEntry) -> AlbumLink:
 async def async_setup_entry(hass: HomeAssistant, entry: SharedAlbumConfigEntry) -> bool:
     """Start an album: load its store, add entities, sync in the background."""
     options = with_defaults(hass, entry.title, entry.options)
+    # Confirm the album folder in the executor (Path.resolve follows
+    # symlinks) and then load the store. Both are one-off setup I/O;
+    # neither may run on the event loop.
     try:
-        coordinator = AlbumCoordinator(hass, entry, album_link(entry), options)
+        target = await async_resolve_target(hass, options)
     except ValueError as err:
         raise ConfigEntryError(
             translation_domain=DOMAIN,
             translation_key="invalid_folder_setup",
             translation_placeholders={"field": str(err)},
         ) from err
+    coordinator = AlbumCoordinator(hass, entry, album_link(entry), options, target)
     await coordinator.async_load()
     entry.runtime_data = coordinator
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

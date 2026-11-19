@@ -74,7 +74,7 @@ from .const import (
 from .exceptions import SharedAlbumError
 from .hosts import normalize_extra_host
 from .links import AlbumLink, parse_link
-from .options import default_options, folder_for, validate_options, with_defaults
+from .options import async_validate_options, default_options, folder_for, with_defaults
 
 
 async def async_probe(
@@ -267,7 +267,9 @@ class SharedAlbumConfigFlow(ConfigFlow, domain=DOMAIN):
         }
         errors: dict[str, str] = {}
         if user_input is not None:
-            cleaned, field_errors = validate_options(self.hass, user_input, defaults)
+            cleaned, field_errors = await async_validate_options(
+                self.hass, user_input, defaults
+            )
             errors = field_errors
             if not errors:
                 return self.async_create_entry(
@@ -326,7 +328,9 @@ class SharedAlbumConfigFlow(ConfigFlow, domain=DOMAIN):
             CONF_EXTRA_HOSTS: self._extra_hosts,
         }
         overrides = {k: data[k] for k in (CONF_MEDIA_DIR, CONF_FOLDER) if data.get(k)}
-        cleaned, field_errors = validate_options(self.hass, overrides, defaults)
+        cleaned, field_errors = await async_validate_options(
+            self.hass, overrides, defaults
+        )
         if field_errors:
             return self.async_abort(reason=next(iter(field_errors.values())))
         return self.async_create_entry(
@@ -381,7 +385,7 @@ class SharedAlbumOptionsFlow(OptionsFlow):
         current = with_defaults(self.hass, entry.title, entry.options)
         errors: dict[str, str] = {}
         if user_input is not None:
-            cleaned, field_errors = validate_options(
+            cleaned, field_errors = await async_validate_options(
                 self.hass, _flatten(user_input), current
             )
             if not field_errors:

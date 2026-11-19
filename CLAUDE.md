@@ -1,7 +1,8 @@
 # Shared Album Mgmt: notes for Claude and other coding agents
 
 Home Assistant custom integration (`shared_album_mgmt`), installed through the
-Marketplace on Home Assistant 2026.11 and newer and through HACS on 2026.10.
+Marketplace on Home Assistant 2026.11 and newer and through HACS on 2026.10
+(it is in the default store, so a custom repository is only a fallback).
 It copies public iCloud shared albums into a media folder and keeps them in
 sync, with an admin-only sidebar panel. Read this before changing anything.
 
@@ -59,7 +60,12 @@ from a Home Assistant core checkout (it is not installed with the harness).
   need a signed-in session and are out of scope.
 - No blocking I/O on the event loop. Every file operation goes through
   `hass.async_add_executor_job`; pillow-heif is imported once in the
-  executor from `async_setup`. `tests/test_blocking_io.py` checks it.
+  executor from `async_setup`. Confirming the album folder
+  (`Path.resolve`, so a symlink cannot escape the media directory) runs
+  in the executor from `async_setup_entry` and from
+  `async_validate_options` (the options flow, the setup dialog and the
+  panel). `tests/test_blocking_io.py` hooks `Path.resolve` and the other
+  filesystem calls, and asserts `Path.resolve` is not called on the loop.
 - Never contact a host that isn't on the allow-list. New Apple hosts go in
   `hosts.py` with accept/reject tests in `tests/test_hosts.py`; users can add
   their own through Extra trusted hosts or the Repairs issue.

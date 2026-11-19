@@ -67,11 +67,15 @@ def loop_io(hass: HomeAssistant) -> Generator[list[str]]:
 
         return wrapper
 
+    # Path.resolve is implemented with os.lstat / os.path.realpath, not
+    # os.stat, which is why it needs its own hook: the original list missed
+    # the setup call frenck flagged on hacs/default#14468.
     targets = [
         (builtins, "open"),
         (io, "open"),
         (os, "open"),
         (os, "stat"),
+        (os, "lstat"),
         (os, "replace"),
         (os, "unlink"),
         (os, "scandir"),
@@ -79,6 +83,7 @@ def loop_io(hass: HomeAssistant) -> Generator[list[str]]:
         (os, "mkdir"),
         (shutil, "copyfile"),
         (shutil, "disk_usage"),
+        (Path, "resolve"),
     ]
     patches = [
         patch.object(mod, attr, wrap(f"{mod.__name__}.{attr}", getattr(mod, attr)))
@@ -151,3 +156,33 @@ async def test_no_file_io_on_the_event_loop(
     await hass.async_block_till_done(wait_background_tasks=True)
 
     assert loop_io == []
+
+
+async def test_path_resolve_runs_in_the_executor(
+    hass: HomeAssistant, apple: FakeApple, media_dir: Path
+) -> None:
+    """Album folder confirmation (Path.resolve) must not run on the loop.
+
+    frenck noted on the HACS default review that resolve_target ran
+    Path.resolve during AlbumCoordinator.__init__, which setup called on
+    the event loop. Setup now confirms the folder in the executor; this
+    watches the thread Path.resolve is called from inside this package.
+    """
+    loop_thread = threading.get_ident()
+    callers: list[int] = []
+    original = Path.resolve
+
+    def wrapped(self: Path, *args: object, **kwargs: object) -> Path:
+        frame = sys._getframe(1)
+        while frame is not None:
+            if PACKAGE in frame.f_code.co_filename:
+                callers.append(threading.get_ident())
+                break
+            frame = frame.f_back
+        return original(self, *args, **kwargs)
+
+    with patch.object(Path, "resolve", wrapped):
+        await setup_entry(hass, make_entry())
+
+    assert callers, "setup should confirm the album folder with Path.resolve"
+    assert all(tid != loop_thread for tid in callers)

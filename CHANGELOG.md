@@ -5,6 +5,25 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2026-11-19
+
+### Fixed
+
+- Confirming the album folder no longer blocks the event loop. `Path.resolve()`
+  (which follows symlinks so a folder cannot write outside the media
+  directory) runs in the executor during setup, together with loading the
+  album's store, and the same check is used when the options flow, the setup
+  dialog or the sidebar panel saves settings. Tests now watch `Path.resolve`
+  so a later regression fails CI.
+
+### Changed
+
+- Shared Album Mgmt is in the HACS default store. The README's Marketplace
+  and HACS sections say you can search for it without adding a custom
+  repository; the custom repository steps stay as a fallback.
+- Ruff 0.17.6, up from 0.17.5. The newest Home Assistant test harness is
+  still 2026.10.4, and the 2026.10 minimum stays on its current pin.
+
 ## [0.1.0] - 2026-11-18
 
 ### Added
@@ -37,4 +56,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   carry no contributor, so that field stays empty for them. Sanitized
   recorded responses are part of the tests.
 
+[0.1.1]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/bisman-automations/ha-shared-album-mgmt/releases/tag/v0.1.0

@@ -3,8 +3,8 @@
 # unpinned on purpose, so CI always tests the newest release.
 pytest-homeassistant-custom-component
 # Lint and type checks, pinned so they only change when Dependabot proposes an
-# update. Current releases as of 2026-11-18.
-ruff==0.17.5
+# update. Current releases as of 2026-11-19.
+ruff==0.17.6
 mypy==2.4.1
 # Test-only libraries (the integration's runtime requirements are in
 # manifest.json) go below. pillow-heif is the manifest requirement, installed

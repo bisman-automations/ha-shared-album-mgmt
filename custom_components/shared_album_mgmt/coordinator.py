@@ -14,6 +14,7 @@ import asyncio
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 import logging
+from pathlib import Path
 import time
 from typing import Any
 
@@ -48,7 +49,6 @@ from .exceptions import (
     UntrustedHostError,
 )
 from .links import AlbumLink
-from .options import resolve_target
 from .store import AlbumStore
 from .sync import AlbumSyncer, SyncResult
 
@@ -93,8 +93,13 @@ class AlbumCoordinator(DataUpdateCoordinator[AlbumSnapshot]):
         entry: ConfigEntry,
         link: AlbumLink,
         options: dict[str, Any],
+        target: Path,
     ) -> None:
-        """Set up the client, store and engine for the entry."""
+        """Set up the client, store and engine for the entry.
+
+        ``target`` is the album folder already confirmed by
+        :func:`options.async_resolve_target` (executor I/O done in setup).
+        """
         interval = int(options[CONF_INTERVAL])
         super().__init__(
             hass,
@@ -110,7 +115,7 @@ class AlbumCoordinator(DataUpdateCoordinator[AlbumSnapshot]):
         self.client = SharedAlbumClient(
             async_get_clientsession(hass), link, extra_hosts=options[CONF_EXTRA_HOSTS]
         )
-        self.target = resolve_target(hass, options)
+        self.target = target
         self.syncer = AlbumSyncer(
             hass, self.client, self.store, self.target, options, entry.title
         )

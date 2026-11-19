@@ -41,7 +41,7 @@ from .coordinator import AlbumCoordinator
 from .exceptions import SharedAlbumError
 from .hosts import normalize_extra_host
 from .links import parse_link, redact_id
-from .options import media_content_id, validate_options, with_defaults
+from .options import async_validate_options, media_content_id, with_defaults
 from .thumbs import media_path
 
 PAGE_MAX = 500
@@ -400,7 +400,7 @@ async def ws_update_settings(
         connection.send_error(msg["id"], "not_found", "Album not found")
         return
     current = with_defaults(hass, entry.title, entry.options)
-    cleaned, errors = validate_options(hass, msg["options"], current)
+    cleaned, errors = await async_validate_options(hass, msg["options"], current)
     title = (msg.get("title") or entry.title).strip() or entry.title
     if errors:
         connection.send_result(msg["id"], {"ok": False, "errors": errors})

@@ -111,9 +111,22 @@ def clean_folder(value: str) -> str | None:
 
 
 def resolve_target(hass: HomeAssistant, options: Mapping[str, Any]) -> Path:
-    """The album folder on disk. Raises ValueError when it isn't usable."""
-    dirs = hass.config.media_dirs
-    base = dirs.get(str(options.get(CONF_MEDIA_DIR) or ""))
+    """The album folder on disk. Raises ValueError when it isn't usable.
+
+    Blocking: :meth:`Path.resolve` follows symlinks, so a folder that
+    :func:`clean_folder` accepted cannot still escape the media directory
+    through a link. Call this only from the executor (or use
+    :func:`async_resolve_target` from the event loop).
+    """
+    return _resolve_target(hass.config.media_dirs, options)
+
+
+def _resolve_target(media_dirs: Mapping[str, str], options: Mapping[str, Any]) -> Path:
+    """Same as :func:`resolve_target`, given the media-dir mapping directly.
+
+    Kept separate so the executor job does not have to touch ``hass``.
+    """
+    base = media_dirs.get(str(options.get(CONF_MEDIA_DIR) or ""))
     if base is None:
         raise ValueError("media_dir")
     folder = clean_folder(str(options.get(CONF_FOLDER) or ""))
@@ -121,10 +134,22 @@ def resolve_target(hass: HomeAssistant, options: Mapping[str, Any]) -> Path:
         raise ValueError("folder")
     root = Path(base)
     target = root / folder
-    # Belt and braces: the cleaned folder can't climb out, but check anyway.
-    if root.resolve() not in (target.resolve(), *target.resolve().parents):
+    # Belt and braces: the cleaned folder can't climb out as a path, but a
+    # symlink inside the media dir still could. Resolve once and refuse a
+    # target that lands outside the media dir. The path we return is the
+    # one built from the configured media dir, not the resolved form, so
+    # the panel and Media Source ids keep the folder the user chose.
+    resolved_root = root.resolve()
+    resolved_target = target.resolve()
+    if resolved_root not in (resolved_target, *resolved_target.parents):
         raise ValueError("folder")
     return target
+
+
+async def async_resolve_target(hass: HomeAssistant, options: Mapping[str, Any]) -> Path:
+    """:func:`resolve_target` in the executor, safe to call from the loop."""
+    dirs = hass.config.media_dirs
+    return await hass.async_add_executor_job(_resolve_target, dirs, options)
 
 
 def media_content_id(options: Mapping[str, Any], filename: str | None = None) -> str:
@@ -233,4 +258,25 @@ def validate_options(
     else:
         merged[CONF_EXTRA_HOSTS] = hosts
 
+    return merged, errors
+
+
+async def async_validate_options(
+    hass: HomeAssistant, raw: Mapping[str, Any], current: Mapping[str, Any]
+) -> tuple[dict[str, Any], dict[str, str]]:
+    """:func:`validate_options`, then confirm the folder in the executor.
+
+    The schema checks (including :func:`clean_folder`) stay on the loop
+    because they are CPU-only. The symlink check is the only filesystem
+    work, and it is batched here with that confirmation so setup, the
+    options flow, the config flow and the panel all apply the same rule
+    without blocking the loop.
+    """
+    merged, errors = validate_options(hass, raw, current)
+    if CONF_FOLDER in errors or CONF_MEDIA_DIR in errors:
+        return merged, errors
+    try:
+        await async_resolve_target(hass, merged)
+    except ValueError:
+        errors[CONF_FOLDER] = "invalid_folder"
     return merged, errors

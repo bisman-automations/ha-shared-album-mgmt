@@ -35,6 +35,19 @@ async def test_bad_folder_fails_setup(
     assert entry2.state is ConfigEntryState.SETUP_ERROR
 
 
+async def test_symlink_escape_fails_setup(
+    hass: HomeAssistant, apple: FakeApple, media_dir: Path, tmp_path: Path
+) -> None:
+    """A folder that clean_folder accepts still fails when a symlink leaves the media dir."""
+    outside = tmp_path / "outside"
+    outside.mkdir()
+    (media_dir / "escape").symlink_to(outside)
+    entry = make_entry(folder="escape/secret")
+    entry.add_to_hass(hass)
+    assert not await hass.config_entries.async_setup(entry.entry_id)
+    assert entry.state is ConfigEntryState.SETUP_ERROR
+
+
 async def test_setup_does_not_wait_for_apple(
     hass: HomeAssistant, apple: FakeApple, media_dir: Path
 ) -> None:
@@ -97,6 +110,17 @@ def test_resolve_target_and_media_id(hass: HomeAssistant, media_dir: Path) -> No
         media_content_id({"media_dir": "local", "folder": "x"}, "a.jpg")
         == "media-source://media_source/local/x/a.jpg"
     )
+
+
+def test_resolve_target_refuses_symlink_escape(
+    hass: HomeAssistant, media_dir: Path, tmp_path: Path
+) -> None:
+    """Path.resolve follows a symlink that would write outside the media dir."""
+    outside = tmp_path / "outside"
+    outside.mkdir()
+    (media_dir / "escape").symlink_to(outside)
+    with pytest.raises(ValueError, match="folder"):
+        resolve_target(hass, {"media_dir": "local", "folder": "escape/secret"})
 
 
 def test_validate_options(hass: HomeAssistant, media_dir: Path) -> None:

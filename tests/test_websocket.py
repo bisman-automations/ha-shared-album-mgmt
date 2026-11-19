@@ -378,7 +378,8 @@ async def test_static_panel_js_served(
     await setup_entry(hass, make_entry())
     panel = hass.data[PANELS][PANEL_URL]
     js_url = panel.config["_panel_custom"]["js_url"]
-    assert js_url.startswith(f"/{DOMAIN}_static/shared-album-mgmt-panel.js?v=0.1.0")
+    version = hass.data[DOMAIN]["version"]
+    assert js_url == f"/{DOMAIN}_static/shared-album-mgmt-panel.js?v={version}"
     client = await hass_client()
     resp = await client.get(js_url.split("?")[0])
     assert resp.status == HTTPStatus.OK

@@ -36,6 +36,9 @@ albums that have **Public Website** turned on, the same way a browser does.
 
 [![Open your Home Assistant instance and open this repository in the Marketplace.](https://my.home-assistant.io/badges/marketplace_repository.svg)](https://my.home-assistant.io/redirect/marketplace_repository/?owner=bisman-automations&repository=ha-shared-album-mgmt&category=integration)
 
+Shared Album Mgmt is in the Marketplace default store, so you can search for
+it without adding a custom repository.
+
 1. Open the Marketplace and search for **Shared Album Mgmt**, or select the button above to open this repository in the Marketplace.
 2. Download **Shared Album Mgmt** and restart Home Assistant.
 
@@ -46,6 +49,9 @@ Marketplace the first time it starts on 2026.11.
 ### HACS (Home Assistant 2026.10 and older)
 
 [![Open your Home Assistant instance and open this repository in HACS.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=bisman-automations&repository=ha-shared-album-mgmt&category=integration)
+
+Shared Album Mgmt is in the HACS default store, so you can search for it
+without adding a custom repository.
 
 1. Open HACS and search for **Shared Album Mgmt**, or select the button above to open this repository in HACS.
 2. Download **Shared Album Mgmt** and restart Home Assistant.
