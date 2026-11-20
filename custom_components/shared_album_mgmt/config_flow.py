@@ -352,7 +352,7 @@ class SharedAlbumConfigFlow(ConfigFlow, domain=DOMAIN):
                 await self.async_set_unique_id(self._link.unique_id)
                 if self._link.unique_id != entry.unique_id:
                     self._abort_if_unique_id_configured()
-                return self.async_update_reload_and_abort(
+                return self.async_update_and_abort(
                     entry,
                     unique_id=self._link.unique_id,
                     title=(user_input.get(CONF_NAME) or "").strip() or entry.title,
