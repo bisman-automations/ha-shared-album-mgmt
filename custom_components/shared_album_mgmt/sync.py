@@ -245,6 +245,8 @@ class AlbumSyncer:
         self.target = target
         self.options = options
         self.title = title
+        # (guid, file, sha256) of the photo last copied to latest.jpg.
+        self._latest_copied: tuple[str, str, str] | None = None
 
     # -- helpers --------------------------------------------------------------
 
@@ -644,9 +646,19 @@ class AlbumSyncer:
         )
         state.latest_guid = latest[0] if latest else None
         if self.options[CONF_WRITE_LATEST] and latest:
-            await self._run(
-                _fs_copy, self.target / latest[1].file, self.target / LATEST_FILENAME
-            )
+            guid, record = latest
+            key = (guid, record.file, record.sha256)
+            # Copy only when the newest photo changed, or latest.jpg is gone
+            # or isn't that photo's size any more: most runs bring nothing new.
+            if (
+                key != self._latest_copied
+                or await self._run(_fs_size, self.target / LATEST_FILENAME)
+                != record.size
+            ):
+                await self._run(
+                    _fs_copy, self.target / record.file, self.target / LATEST_FILENAME
+                )
+                self._latest_copied = key
         if self.options[CONF_WRITE_INDEX]:
             await self._run(
                 _fs_write_json, self.target / INDEX_FILENAME, self.index_document()

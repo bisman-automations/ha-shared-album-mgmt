@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.3] - 2026-11-21
+
+### Changed
+
+- **Less work during a sync.** While photos download, only the Status sensor
+  is updated with the progress; the other sensors, the Problem sensor and the
+  Latest photo update only when what they show changes. The download progress
+  is still shown on the Status sensor and in the panel, but is no longer saved
+  in history every half second.
+- **`latest.jpg` is copied only when it changes.** A sync that brings no newer
+  photo leaves `latest.jpg` as it is instead of copying the photo again. It is
+  still written again if it was deleted or replaced by hand.
+
 ## [0.1.2] - 2026-11-20
 
 ### Fixed
@@ -65,6 +78,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   carry no contributor, so that field stays empty for them. Sanitized
   recorded responses are part of the tests.
 
+[0.1.3]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/bisman-automations/ha-shared-album-mgmt/releases/tag/v0.1.0

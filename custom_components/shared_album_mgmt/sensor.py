@@ -117,6 +117,9 @@ class AlbumSensor(AlbumEntity, SensorEntity):
     """One value from the album snapshot."""
 
     entity_description: AlbumSensorDescription
+    # Download progress changes about twice a second during a sync; the
+    # panel shows it live, history doesn't need every step.
+    _unrecorded_attributes = frozenset({"progress"})
 
     def __init__(self, coordinator: Any, description: AlbumSensorDescription) -> None:
         """Bind the description."""

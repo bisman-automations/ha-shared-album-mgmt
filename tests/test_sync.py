@@ -11,6 +11,7 @@ from PIL import Image
 import pytest
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
+from custom_components.shared_album_mgmt import sync as sync_module
 from custom_components.shared_album_mgmt.const import DOMAIN
 from custom_components.shared_album_mgmt.coordinator import AlbumCoordinator
 from custom_components.shared_album_mgmt.repairs import async_create_fix_flow
@@ -556,3 +557,33 @@ def test_jpeg_helper_roundtrip() -> None:
     from .fake_apple import jpeg_bytes
 
     assert Image.open(io.BytesIO(jpeg_bytes())).format == "JPEG"
+
+
+async def test_latest_copied_only_when_it_changes(
+    hass: HomeAssistant, apple: FakeApple, media_dir: Path
+) -> None:
+    """A run with nothing new leaves latest.jpg alone; a new photo replaces it."""
+    entry = await setup_entry(hass, make_entry())
+    latest = album_dir(media_dir) / "latest.jpg"
+    assert latest.read_bytes() == (album_dir(media_dir) / "IMG_0001.jpg").read_bytes()
+
+    with patch(
+        "custom_components.shared_album_mgmt.sync._fs_copy",
+        wraps=sync_module._fs_copy,
+    ) as copy:
+        await coord(entry).async_sync()
+        assert copy.call_count == 0
+
+        # Deleted by hand: written again.
+        latest.unlink()
+        await coord(entry).async_sync()
+        assert copy.call_count == 1
+        assert latest.exists()
+
+        # A newer photo: copied.
+        apple.albums[MODERN_ID].items.append(
+            FakeApple.photo("NEW", "NEW.JPG", NOW_MS + 1000)
+        )
+        await coord(entry).async_sync()
+        assert copy.call_count == 2
+        assert latest.read_bytes() == (album_dir(media_dir) / "NEW.jpg").read_bytes()
