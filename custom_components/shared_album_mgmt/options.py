@@ -146,6 +146,22 @@ def _resolve_target(media_dirs: Mapping[str, str], options: Mapping[str, Any]) -
     return target
 
 
+def _is_public(www: str, target: Path) -> bool:
+    """Whether ``target`` is inside ``www``, which Home Assistant serves at
+    ``/local/`` to anyone who can reach it, without a login. Blocking:
+    resolves both, so a media folder that is a link into www counts."""
+    public = Path(www).resolve()
+    resolved = target.resolve()
+    return public == resolved or public in resolved.parents
+
+
+async def async_folder_is_public(hass: HomeAssistant, target: Path) -> bool:
+    """:func:`_is_public` for Home Assistant's www folder, in the executor."""
+    return await hass.async_add_executor_job(
+        _is_public, hass.config.path("www"), target
+    )
+
+
 async def async_resolve_target(hass: HomeAssistant, options: Mapping[str, Any]) -> Path:
     """:func:`resolve_target` in the executor, safe to call from the loop."""
     dirs = hass.config.media_dirs
@@ -276,7 +292,16 @@ async def async_validate_options(
     if CONF_FOLDER in errors or CONF_MEDIA_DIR in errors:
         return merged, errors
     try:
-        await async_resolve_target(hass, merged)
+        target = await async_resolve_target(hass, merged)
     except ValueError:
         errors[CONF_FOLDER] = "invalid_folder"
+        return merged, errors
+    # A new folder may not be one Home Assistant serves without a login. An
+    # album already there keeps working (with a repair) until it's moved.
+    moved = (merged.get(CONF_MEDIA_DIR), merged.get(CONF_FOLDER)) != (
+        current.get(CONF_MEDIA_DIR),
+        current.get(CONF_FOLDER),
+    )
+    if moved and await async_folder_is_public(hass, target):
+        errors[CONF_FOLDER] = "public_folder"
     return merged, errors

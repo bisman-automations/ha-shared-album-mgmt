@@ -147,3 +147,6 @@ ISSUE_UNTRUSTED_HOST: Final = "untrusted_host"
 ISSUE_HEIC_UNAVAILABLE: Final = "heic_unavailable"
 ISSUE_LOW_DISK: Final = "low_disk_space"
 ISSUE_ALBUM_GONE: Final = "album_gone"
+# The album folder is inside www/, which Home Assistant serves at /local/
+# without a login.
+ISSUE_PUBLIC_FOLDER: Final = "public_folder"

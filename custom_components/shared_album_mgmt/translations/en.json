@@ -71,7 +71,8 @@
       "invalid_media_dir": "Choose one of Home Assistant's media folders.",
       "invalid_folder": "Use a folder path inside the media folder, like shared_albums/family. Each part has to start with a letter or digit.",
       "invalid_number": "Enter a number in the allowed range.",
-      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com."
+      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com.",
+      "public_folder": "That folder is inside www, which Home Assistant shares without a login. Pick a media folder instead, like shared_albums/family."
     },
     "abort": {
       "already_configured": "This album has already been added.",
@@ -176,7 +177,8 @@
       "invalid_media_dir": "Choose one of Home Assistant's media folders.",
       "invalid_folder": "Use a folder path inside the media folder, like shared_albums/family. Each part has to start with a letter or digit.",
       "invalid_number": "Enter a number in the allowed range.",
-      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com."
+      "invalid_host": "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com.",
+      "public_folder": "That folder is inside www, which Home Assistant shares without a login. Pick a media folder instead, like shared_albums/family."
     }
   },
   "selector": {
@@ -320,6 +322,10 @@
     "album_gone": {
       "title": "{album} can't be read",
       "description": "Apple no longer shares {album} publicly: its Public Website was turned off or the album was deleted. Files already downloaded are kept. Turn Public Website back on, change the link with Reconfigure, or remove the album."
+    },
+    "public_folder": {
+      "title": "{album}'s photos can be downloaded without a login",
+      "description": "{album} saves its photos in {folder}, inside the www folder. Home Assistant serves everything in www at /local/ to anyone who can reach it, without asking anyone to log in. Open the album's Settings in Shared Album Mgmt and move it to a media folder, such as shared_albums. The album keeps syncing until you do."
     }
   },
   "exceptions": {

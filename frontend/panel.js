@@ -659,6 +659,7 @@ class SharedAlbumMgmtPanel extends LitElement {
         nothing_to_sync: "Turn on photos, videos, or both.",
         invalid_media_dir: "Choose one of Home Assistant's media folders.",
         invalid_folder: "Use a folder like shared_albums/family. Each part starts with a letter or digit.",
+        public_folder: "That folder is inside www, which Home Assistant shares without a login. Pick a media folder, like shared_albums/family.",
         invalid_number: "Enter a number in the allowed range.",
         invalid_host: "Use host names like p99-ckdatabasews.icloud.com or *.icloud-content.com.",
       }[key] ?? key

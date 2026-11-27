@@ -10,6 +10,7 @@ edits its settings.
 from __future__ import annotations
 
 import logging
+from pathlib import Path
 from typing import Any
 
 import probatio
@@ -23,7 +24,7 @@ from homeassistant.core import (
     SupportsResponse,
 )
 from homeassistant.exceptions import ConfigEntryError, ServiceValidationError
-from homeassistant.helpers import config_validation as cv
+from homeassistant.helpers import config_validation as cv, issue_registry as ir
 from homeassistant.helpers.typing import ConfigType
 
 from .catalog import async_write_catalog
@@ -34,6 +35,7 @@ from .const import (
     CONF_ALBUM_ID,
     CONF_KIND,
     DOMAIN,
+    ISSUE_PUBLIC_FOLDER,
     SERVICE_PURGE_QUARANTINE,
     SERVICE_REBUILD_INDEX,
     SERVICE_SYNC_NOW,
@@ -42,7 +44,7 @@ from .const import (
 from .convert import heic_available
 from .coordinator import AlbumCoordinator
 from .links import AlbumLink
-from .options import async_resolve_target, with_defaults
+from .options import async_folder_is_public, async_resolve_target, with_defaults
 from .panel import async_register_panel, async_register_static, async_unregister_panel
 from .thumbs import async_register_views
 from .websocket_api import async_register_websocket
@@ -97,6 +99,9 @@ async def async_setup_entry(hass: HomeAssistant, entry: SharedAlbumConfigEntry) 
             translation_key="invalid_folder_setup",
             translation_placeholders={"field": str(err)},
         ) from err
+    _public_folder_issue(
+        hass, entry, target, await async_folder_is_public(hass, target)
+    )
     coordinator = AlbumCoordinator(hass, entry, album_link(entry), options, target)
     await coordinator.async_load()
     entry.runtime_data = coordinator
@@ -107,6 +112,30 @@ async def async_setup_entry(hass: HomeAssistant, entry: SharedAlbumConfigEntry) 
         hass, coordinator.async_sync(), f"{DOMAIN} first sync {entry.entry_id}"
     )
     return True
+
+
+def _public_folder_issue(
+    hass: HomeAssistant, entry: ConfigEntry, target: Path, public: bool
+) -> None:
+    """Warn when the album's files can be downloaded without a login.
+
+    Home Assistant serves everything in www/ at /local/ to anyone who can
+    reach it. The album keeps syncing; the repair says to move it to a
+    media folder (Settings of the album, or the panel's Settings).
+    """
+    issue_id = f"{ISSUE_PUBLIC_FOLDER}_{entry.entry_id}"
+    if not public:
+        ir.async_delete_issue(hass, DOMAIN, issue_id)
+        return
+    ir.async_create_issue(
+        hass,
+        DOMAIN,
+        issue_id,
+        is_fixable=False,
+        severity=ir.IssueSeverity.WARNING,
+        translation_key=ISSUE_PUBLIC_FOLDER,
+        translation_placeholders={"album": entry.title, "folder": str(target)},
+    )
 
 
 async def _async_options_updated(hass: HomeAssistant, entry: ConfigEntry) -> None:
@@ -136,6 +165,7 @@ async def async_remove_entry(hass: HomeAssistant, entry: ConfigEntry) -> None:
     """Forget the album's records. Its folder and photos are left on disk."""
     from .store import AlbumStore  # noqa: PLC0415
 
+    ir.async_delete_issue(hass, DOMAIN, f"{ISSUE_PUBLIC_FOLDER}_{entry.entry_id}")
     await AlbumStore(hass, entry.entry_id).async_remove()
 
 

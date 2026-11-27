@@ -74,6 +74,7 @@ from a Home Assistant core checkout (it is not installed with the harness).
   twice, and the file's SHA-256 still matches what was downloaded. Restored
   files are pinned. Keep these rules and their tests together in `sync.py`
   and `tests/test_sync.py`.
+- Never in `www/` (served at `/local/` without a login): `async_validate_options` refuses a new or moved folder that resolves inside `hass.config.path("www")` (`public_folder`); an album already there keeps working and setup raises the `public_folder_<entry id>` repair (`_public_folder_issue`), deleted once it's moved or removed.
 - Errors are state (Last error, Problem, panel banner), never
   `UpdateFailed`/unavailable entities.
 - `index.json` stays readable by iCloud Shared Album Sync's consumers

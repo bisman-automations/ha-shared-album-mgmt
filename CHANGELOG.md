@@ -5,6 +5,12 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2026-11-27
+
+### Security
+
+- **Album photos stay behind a login.** Home Assistant serves everything in its `www` folder at `/local/` to anyone who can reach it, without a login. An album can no longer be saved in a folder there (including a media folder that points into `www`), and an album already there gets a repair saying so and how to move it. It keeps syncing until you do.
+
 ## [0.1.3] - 2026-11-21
 
 ### Changed
@@ -78,6 +84,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   carry no contributor, so that field stays empty for them. Sanitized
   recorded responses are part of the tests.
 
+[0.1.4]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.3...v0.1.4
 [0.1.3]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.2...v0.1.3
 [0.1.2]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.1...v0.1.2
 [0.1.1]: https://github.com/bisman-automations/ha-shared-album-mgmt/compare/v0.1.0...v0.1.1

@@ -214,6 +214,13 @@ sent only from Apple to your Home Assistant.
 - **"Apple returned an unexpected … host":** see [Trusted hosts](#trusted-hosts).
 - **"This album is shared with people only":** turn on **Public Website** for
   the album in Photos.
+- **"…'s photos can be downloaded without a login":** the album's folder is
+  inside `www`, which Home Assistant serves at `/local/` to anyone who can
+  reach it. Open the album's settings and pick a media folder such as
+  `shared_albums`. A new album can't be put in `www`.
+- **Spook says `/local/icloud-albums/albums.json` can be downloaded:** that
+  file comes from the older iCloud Shared Album Sync app, not from Shared
+  Album Mgmt. Delete the `www/icloud-albums` folder once nothing uses it.
 - **HEIC photos saved as Apple's JPEG:** pillow-heif couldn't load on your
   system; a Repairs issue says so. Everything else keeps working.
 - **Nothing was removed:** see [Quarantine safety](#quarantine-safety); the

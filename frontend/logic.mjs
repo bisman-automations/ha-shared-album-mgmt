@@ -26,6 +26,8 @@ export const ERROR_TEXT = {
   storage_error: "The album folder couldn't be written: {error}.",
   already_configured: "This album has already been added.",
   invalid_folder: "Use a folder inside the media folder, like shared_albums/family.",
+  public_folder:
+    "That folder is inside www, which Home Assistant shares without a login. Pick a media folder, like shared_albums/family.",
   invalid_host: "Enter host names like p99-ckdatabasews.icloud.com or *.icloud-content.com.",
   unknown: "Something unexpected went wrong. Check the logs.",
 };
